@@ -92,7 +92,6 @@ foreach($authsequence as $authname) {
 
 /// Define variables used in page
 $site = get_site();
-
 $loginsite = get_string("loginsite");
 $PAGE->navbar->add($loginsite);
 
@@ -356,4 +355,4 @@ if (isloggedin() and !isguestuser()) {
     }
 }
 
-echo $OUTPUT->footer();
+//echo $OUTPUT->footer();
