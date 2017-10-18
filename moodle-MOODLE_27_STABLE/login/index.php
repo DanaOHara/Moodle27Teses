@@ -43,18 +43,19 @@ if ($cancel) {
 }
 
 //HTTPS is required in this page when $CFG->loginhttps enabled
-$PAGE->https_required();
+$PAGE->https_required(); //verifica si hay un ssl asociado a la pagina
 
 $context = context_system::instance();
-$PAGE->set_url("$CFG->httpswwwroot/login/index.php");
+$PAGE->set_url("$CFG->httpswwwroot/login/index.php"); //verifica la url de la pagina
 $PAGE->set_context($context);
-$PAGE->set_pagelayout('login');
+$PAGE->set_pagelayout('login'); //
 
 /// Initialize variables
 $errormsg = '';
 $errorcode = 0;
 
 // login page requested session test
+//verifica si el usuario poseia una sesion funcionando
 if ($testsession) {
     if ($testsession == $USER->id) {
         if (isset($SESSION->wantsurl)) {

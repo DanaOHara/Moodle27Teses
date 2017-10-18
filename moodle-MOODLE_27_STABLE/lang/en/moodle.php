@@ -2033,3 +2033,4 @@ $string['zippingbackup'] = 'Zipping backup';
 
 
 $string['loginbienvenida'] = 'Ingresa con tu correo Usach';
+$string['loginbotonsiguiente'] = 'Siguiente';

@@ -69,3 +69,4 @@ on the Moodle tracker</p>
 <li><a href="http://theming.sonsbeekmedia.nl/">Theme testing playground </a></li>
 </ul>';
 $string['loginBienvenida'] = 'Accede con tu cuenta usach';
+$string['loginbotonsiguiente'] = 'Siguiente';

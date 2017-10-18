@@ -37,15 +37,12 @@ if (empty($CFG->authloginviaemail)) {
         <h3><?php print_string("loginbienvenida") ?></h3>
         <form action="<?php echo $CFG->httpswwwroot; ?>/login/index.php" method="post" id="login" <?php echo $autocomplete; ?> >
           <div class="loginform">
-            <div class="form-label"><label for="username"><?php echo($strusername) ?></label></div>
-            <div class="form-input">
-              <input type="text" name="username" id="username" size="15" value="<?php p($frm->username) ?>" />
-            </div>
+            <label for="username"><?php echo($strusername) ?></label>
             <div class="clearer"><!-- --></div>
-            <div class="form-label"><label for="password"><?php print_string("password") ?></label></div>
-            <div class="form-input">
-              <input type="password" name="password" id="password" size="15" value="" <?php echo $autocomplete; ?> />
-            </div>
+
+              <input type="text" name="username" id="username" value="<?php p($frm->username) ?>" />
+
+            <div class="clearer"><!-- --></div>
           </div>
             <div class="clearer"><!-- --></div>
               <?php if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) { ?>
@@ -55,30 +52,13 @@ if (empty($CFG->authloginviaemail)) {
               </div>
               <?php } ?>
           <div class="clearer"><!-- --></div>
-          <input type="submit" id="loginbtn" value="<?php print_string("login") ?>" />
+          <input type="submit" id="loginbtn" value="<?php print_string("loginbotonsiguiente") ?>" />
           <div class="forgetpass"><a href="forgot_password.php"><?php print_string("forgotten") ?></a></div>
         </form>
-        <div class="desc">
-            <?php
-                echo get_string("cookiesenabled");
-                echo $OUTPUT->help_icon('cookiesenabled');
-            ?>
-        </div>
-      </div>
+
 
 <?php if ($CFG->guestloginbutton and !isguestuser()) {  ?>
-      <div class="subcontent guestsub">
-        <div class="desc">
-          <?php print_string("someallowguest") ?>
-        </div>
-        <form action="index.php" method="post" id="guestlogin">
-          <div class="guestform">
-            <input type="hidden" name="username" value="guest" />
-            <input type="hidden" name="password" value="guest" />
-            <input type="submit" value="<?php print_string("loginguest") ?>" />
-          </div>
-        </form>
-      </div>
+
 <?php } ?>
      </div>
 <?php if ($show_instructions) { ?>
