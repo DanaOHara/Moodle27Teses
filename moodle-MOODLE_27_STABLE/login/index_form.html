@@ -38,6 +38,7 @@ if (empty($CFG->authloginviaemail)) {
         <form action="<?php echo $CFG->httpswwwroot; ?>/login/index.php" method="post" id="login" <?php echo $autocomplete; ?> >
           <div class="loginform">
             <label for="username"><?php echo($strusername) ?></label>
+      
             <div class="clearer"><!-- --></div>
 
               <input type="text" name="username" id="username" value="<?php p($frm->username) ?>" />

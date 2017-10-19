@@ -28,3 +28,8 @@ a.logo {
       text-align: center !important;
       vertical-align: middle;
 }
+
+
+
+.path-mod-quiz .block { display:none !important; }
+.path-mod-quiz .block_navigation { display:none !important; }
