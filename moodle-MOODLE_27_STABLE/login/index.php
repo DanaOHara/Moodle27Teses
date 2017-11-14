@@ -156,7 +156,6 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
           }
           else
           {
-            $username = "admin";
             $user = authenticate_user_login($frm->username, $frm->password);
           }
         }
