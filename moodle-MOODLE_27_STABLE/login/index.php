@@ -27,6 +27,9 @@
 require('../config.php');
 require_once('lib.php');
 
+
+$url = "$CFG->httpswwwroot/login/index_formsecondpart.html";
+
 // Try to prevent searching for sites that allow sign-up.
 if (!isset($CFG->additionalhtmlhead)) {
     $CFG->additionalhtmlhead = '';
@@ -49,6 +52,8 @@ $context = context_system::instance();
 $PAGE->set_url("$CFG->httpswwwroot/login/index.php"); //verifica la url de la pagina
 $PAGE->set_context($context);
 $PAGE->set_pagelayout('login'); //
+
+
 
 /// Initialize variables
 $errormsg = '';
@@ -132,12 +137,28 @@ if ($frm and isset($frm->username)) {                             // Login WITH 
 
     if ($user) {
         //user already supplied by aut plugin prelogin hook
-    } else if (($frm->username == 'guest') and empty($CFG->guestloginbutton)) {
+    }
+     else if (($frm->username == 'guest') and empty($CFG->guestloginbutton)) {
         $user = false;    /// Can't log in as guest if guest button is disabled
         $frm = false;
-    } else {
-        if (empty($errormsg)) {
+
+    }
+
+    else
+
+    {
+        if (empty($errormsg))
+        {
+          if(empty($password))
+          {
+            include($url);
+
+          }
+          else
+          {
+            $username = "admin";
             $user = authenticate_user_login($frm->username, $frm->password);
+          }
         }
     }
 
